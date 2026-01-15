@@ -1,0 +1,41 @@
+================================================================================
+DETAILED FORENSIC COMPARISON REPORT (5-WAY)
+================================================================================
+
+[STAGE 1] HASH & SIZE ANALYSIS
+----------------------------------------
+File Label           | Size (Bytes) | MD5 Hash
+----------------------------------------------
+Suspect              | 90453        | 85a9c9d86e0f48740ee56696c97f1371
+Clean (WhatsApp)     | 90417        | 8921b455aeecd4607e18df188ec9668a
+Clean (Super)        | 241843       | b67cbd991b2a6562fdbb14272c7cc827
+Hidden (Steghide)    | 90312        | 9dfd9a9ec70338086d6a8e0653ea75c0
+Hidden (OpenStego)   | 1440054      | 602721223d829222220bae35e7f2cffe
+
+[STAGE 2] STRUCTURE ANALYSIS (EOI MARKERS)
+----------------------------------------
+File Label           | EOI Count  | EOI Positions
+-------------------------------------------------
+Suspect              | 1          | [90451]
+Clean (WhatsApp)     | 1          | [90415]
+Clean (Super)        | 1          | [241841]
+Hidden (Steghide)    | 1          | [90310]
+Hidden (OpenStego)   | 2          | [309134, 987542]
+
+[STAGE 3] STATISTICAL LSB ANALYSIS
+----------------------------------------
+File Label           | Red LSB    | Green LSB  | Blue LSB  
+-----------------------------------------------------------
+Suspect              | 0.494881 | 0.495346 | 0.498152
+Clean (WhatsApp)     | 0.494881 | 0.495346 | 0.498152
+Clean (Super)        | 0.495025 | 0.495588 | 0.498000
+Hidden (Steghide)    | 0.494935 | 0.495527 | 0.497973
+Hidden (OpenStego)   | 0.494781 | 0.495206 | 0.498092
+
+================================================================================
+FINAL VERDICT & OBSERVATIONS
+================================================================================
+1. Suspect vs WhatsApp Clean LSB Diff: [np.float64(0.0), np.float64(0.0), np.float64(0.0)]
+
+[+] VERDICT: Suspect image is statistically IDENTICAL to the Clean Baseline.
+The 36-byte difference is confirmed as EXIF metadata (Orientation tag).

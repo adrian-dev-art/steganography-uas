@@ -1,0 +1,42 @@
+============================================================
+DIGITAL FORENSIC ANALYSIS REPORT
+============================================================
+
+>>> ANALYZING: Suspect (Picture_UAS_Steganografi.jpg)
+Size: 90453 bytes
+MD5:  85a9c9d86e0f48740ee56696c97f1371
+EOI Markers Count: 1
+EOI Positions: [90451]
+Extra Bytes after last EOI: 0
+LSB Stats (R,G,B): ['0.494881', '0.495346', '0.498152']
+Metadata (EXIF): {'Orientation': 1}
+----------------------------------------
+
+>>> ANALYZING: Clean_Reference (Picture_UAS_Steganografi_fixnodata.jpg)
+Size: 90417 bytes
+MD5:  8921b455aeecd4607e18df188ec9668a
+EOI Markers Count: 1
+EOI Positions: [90415]
+Extra Bytes after last EOI: 0
+LSB Stats (R,G,B): ['0.494881', '0.495346', '0.498152']
+Metadata (EXIF): None
+----------------------------------------
+
+>>> ANALYZING: Hidden_OpenStego (Picture_UAS_Steganografi_hidden.jpg)
+Size: 1440054 bytes
+MD5:  602721223d829222220bae35e7f2cffe
+EOI Markers Count: 2
+EOI Positions: [309134, 987542]
+Extra Bytes after last EOI: 452510
+LSB Stats (R,G,B): ['0.494781', '0.495206', '0.498092']
+Metadata (EXIF): Error
+----------------------------------------
+
+============================================================
+COMPARISON SUMMARY
+============================================================
+Size Difference (Suspect - Clean): 36 bytes
+LSB Deviation: [np.float64(0.0), np.float64(0.0), np.float64(0.0)]
+
+VERDICT: Suspect image matches Clean Reference statistical profile.
+The 36-byte difference is attributed to EXIF metadata (Orientation tag).
